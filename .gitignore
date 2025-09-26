@@ -1,10 +1,21 @@
-HELP.md
-target/
+# ------------------------
+# Build output
+# ------------------------
+/target/
+build/
+
+# Maven Wrapper JAR
 .mvn/wrapper/maven-wrapper.jar
+
+# Evitar subir builds locais em submódulos
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-### STS ###
+# ------------------------
+# Eclipse / STS
+# ------------------------
 .apt_generated
 .classpath
 .factorypath
@@ -13,21 +24,37 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
+# ------------------------
+# IntelliJ IDEA
+# ------------------------
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
 
-### NetBeans ###
+# ------------------------
+# NetBeans
+# ------------------------
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# ------------------------
+# VS Code
+# ------------------------
 .vscode/
+
+# ------------------------
+# OS generated files
+# ------------------------
+.DS_Store
+Thumbs.db
+*.log
+
+# ------------------------
+# Lombok / Annotation Processing
+# ------------------------
+*.class
