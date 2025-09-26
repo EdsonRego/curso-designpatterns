@@ -4,6 +4,30 @@ import java.time.LocalDate;
 
 public class Pessoa {
 
+    /**O Builder é um padrão criacional usado para construir objetos complexos passo a passo,
+     * separando a construção da representação final.
+
+     Útil quando uma classe tem muitos atributos, alguns opcionais,
+     e você quer evitar construtores com muitos parâmetros (“telescoping constructors”).
+
+     Permite criar objetos de forma legível e flexível.
+     Geralmente, você tem:
+
+     Classe produto → a classe que será construída.
+
+     Builder → classe interna (ou separada) que faz a construção.
+
+     Métodos encadeados (chaining) para definir atributos.
+
+     Método build() que retorna o objeto final.
+     Característica	            Padrão Builder
+     Controle da construção	    Passo a passo, flexível
+     Legibilidade	            Alta, especialmente com muitos atributos
+     Imutabilidade	            Sim, objeto final pode ser imutável
+     Vantagem	                Evita construtores longos e confusos
+     Desvantagem	            Mais código boilerplate (mas Lombok ajuda!)
+     */
+
     private String nome;
     private String sobreNome;
     private String documento;
