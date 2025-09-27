@@ -96,6 +96,37 @@ O **Factory Method** define uma **interface para criar objetos**, permitindo que
 
 ---
 
+---
+
+## Padrão Prototype
+
+O **Prototype** é um padrão de criação que permite **clonar objetos existentes** sem acoplar o código às suas classes.  
+É útil quando a criação de um objeto é **custosa ou complexa**, mas pode ser facilmente copiada.
+
+A ideia central é delegar a criação de novos objetos a uma operação de **cópia** definida na própria classe, em vez de usar `new`.
+
+### Características
+- Define uma **interface Prototype** com método de clonagem.
+- Classes concretas implementam a clonagem (shallow ou deep copy).
+- O cliente cria novos objetos chamando `clone()`, sem depender das classes concretas.
+
+### Casos de uso
+- Criação de objetos complexos com muitas configurações.
+- Objetos que precisam ser duplicados em tempo de execução.
+- Situações em que instanciar via `new` é caro em termos de performance.
+
+### Vantagens
+- Reduz o acoplamento entre cliente e classes concretas.
+- Facilita a criação de objetos complexos ou pesados.
+- Pode ser mais eficiente do que instanciar do zero.
+
+### Desvantagens
+- A clonagem profunda pode ser difícil de implementar corretamente.
+- Pode exigir atenção extra para evitar cópias incorretas de referências.
+
+**Pacote:** [`prototype`](./src/main/java/com/edsonrego/curso_desingpatterns/prototype)
+
+
 ## Como compilar e executar
 
 O projeto utiliza **Java 17** e **Maven**.
