@@ -166,6 +166,40 @@ A ideia central é que o proxy implementa a mesma interface que o objeto real, m
 
 **Pacote:** [`proxy`](./src/main/java/com/edsonrego/curso_desingpatterns/proxy)
 
+## Adapter
+
+O **padrão Adapter** é um padrão de design estrutural que permite que objetos com interfaces incompatíveis trabalhem juntos. Ele atua como um "tradutor" entre duas classes, convertendo a interface de uma classe em outra esperada pelos clientes.
+
+### Características principais
+- Conecta classes com interfaces incompatíveis sem modificá-las.
+- Promove **reuso de código** ao integrar componentes existentes em novos contextos.
+- É frequentemente usado para integrar **bibliotecas de terceiros** a sistemas já existentes.
+
+### Exemplo do mundo real
+Um adaptador de tomada que permite conectar um plugue de três pinos em uma tomada de dois pinos. O plugue não muda e a tomada também não, mas o adaptador faz a ligação entre eles.
+
+### Quando usar
+- Quando você quer usar uma classe existente, mas sua interface não corresponde à que o sistema espera.
+- Para integrar sistemas legados com novos sistemas.
+- Para reutilizar código de terceiros sem alterá-lo.
+
+### Vantagens
+- Permite que classes incompatíveis colaborem.
+- Promove reutilização de código legado ou de terceiros.
+- Ajuda a seguir o princípio **Aberto/Fechado** (Open/Closed Principle).
+
+### Desvantagens
+- Pode aumentar a complexidade do sistema se muitos adapters forem criados.
+- O excesso de adaptação pode indicar que o design do sistema precisa ser revisado.
+
+### Estrutura simplificada
+- **Target**: Define a interface esperada pelo cliente.
+- **Adapter**: Implementa a interface `Target` e traduz chamadas para o `Adaptee`.
+- **Adaptee**: Classe existente com uma interface incompatível.
+- **Client**: Utiliza a interface `Target` sem conhecer os detalhes de adaptação.
+
+### Pacote no projeto
+
 
 ## Como compilar e executar
 
