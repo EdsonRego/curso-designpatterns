@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-public class PessoaRepositoryProxy extends PessoaRepository {
+public class PessoaRepositoryProxy extends PessoaRepository implements ProxyPessoa{
 
     private static Logger log = Logger.getLogger(PessoaRepositoryProxy.class.getName());
     //Segundo tipo de uso, CACHE
