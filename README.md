@@ -127,6 +127,46 @@ A ideia central é delegar a criação de novos objetos a uma operação de **c�
 **Pacote:** [`prototype`](./src/main/java/com/edsonrego/curso_desingpatterns/prototype)
 
 
+---
+
+## Padrão Proxy
+
+O **Proxy** é um padrão estrutural que fornece um **substituto ou representante** para outro objeto.  
+Ele controla o acesso ao objeto real, permitindo adicionar comportamentos extras sem modificar diretamente a classe original.
+
+A ideia central é que o proxy implementa a mesma interface que o objeto real, mas intercepta as chamadas e pode executar lógica antes/depois de delegar ao objeto.
+
+### Características
+- Define uma **interface comum** para o objeto real e o proxy.
+- O **proxy** mantém uma referência ao objeto real e redireciona chamadas.
+- Pode adicionar responsabilidades como **segurança, cache, logs ou controle de acesso**.
+
+### Tipos comuns de Proxy
+- **Virtual Proxy**: cria ou carrega objetos pesados sob demanda.
+- **Remote Proxy**: controla acesso a objetos em outra JVM ou servidor.
+- **Protection Proxy**: adiciona restrições de acesso com base em permissões.
+- **Cache Proxy**: armazena resultados para evitar processamento repetitivo.
+- **Logging Proxy**: adiciona rastreamento ou auditoria.
+
+### Casos de uso
+- Controle de acesso a dados sensíveis (ex.: autorização).
+- Criação preguiçosa (lazy loading) de objetos custosos.
+- Interceptação de chamadas para adicionar logs.
+- Comunicação entre sistemas distribuídos.
+
+### Vantagens
+- Desacopla o cliente de detalhes complexos do objeto real.
+- Permite adicionar funcionalidades **sem alterar a classe original**.
+- Facilita a implementação de boas práticas como caching e segurança.
+
+### Desvantagens
+- Aumenta a complexidade estrutural do sistema.
+- Pode impactar a performance se mal implementado (ex.: proxies em cadeia).
+- O cliente pode não perceber que está acessando um proxy, dificultando debugging.
+
+**Pacote:** [`proxy`](./src/main/java/com/edsonrego/curso_desingpatterns/proxy)
+
+
 ## Como compilar e executar
 
 O projeto utiliza **Java 17** e **Maven**.
