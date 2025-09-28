@@ -1,22 +1,23 @@
 package com.edsonrego.curso_desingpatterns.proxy;
 
 import com.edsonrego.curso_desingpatterns.bulder.Pessoa;
+import com.edsonrego.curso_desingpatterns.proxy.solucao.PessoaRepositoryProxy;
 
 import java.util.HashMap;
 
 public class PessoaService {
 
-    private PessoaRepository pessoaRepository;
+    private PessoaRepositoryProxy pessoaRepositoryProxy;
 
-    public PessoaService(PessoaRepository pessoaRepository){
-        this.pessoaRepository = pessoaRepository;
+    public PessoaService(PessoaRepositoryProxy pessoaRepositoryProxy){
+        this.pessoaRepositoryProxy = pessoaRepositoryProxy;
     }
 
     public void save(Pessoa pessoa){
-        pessoaRepository.save(pessoa);
+        pessoaRepositoryProxy.save(pessoa);
     }
 
     public Pessoa findById(Long id){
-        return pessoaRepository.findById(id);
+        return pessoaRepositoryProxy.findById(id);
     }
 }

@@ -9,7 +9,9 @@ import java.time.LocalDate;
 public class TestePessoaProxy {
 
     public static void main(String[] args) {
-        PessoaService pessoaService = new PessoaService(new PessoaRepository());
+
+        PessoaRepositoryProxy pessoaRepositoryProxy = new PessoaRepositoryProxy();
+        PessoaService pessoaService = new PessoaService(new PessoaRepositoryProxy());
 
         Pessoa pessoa = new Pessoa.PessoaBuilder()
                 .sobreNome("Rego")
@@ -23,5 +25,8 @@ public class TestePessoaProxy {
 
         Pessoa pessoaRetornada = pessoaService.findById(1L);
         System.out.println(pessoaRetornada);
+
+        Pessoa pessoaRetornadaCache = pessoaService.findById(1L);
+        System.out.println(pessoaRetornadaCache);
     }
 }
