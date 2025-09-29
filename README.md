@@ -5,7 +5,7 @@
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen)](#)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
-Este repositório contém exemplos práticos de padrões de projeto em Java, com foco nos padrões **Adapter**, **Builder**, **Factory Method**, **Prototype**, **Proxy**, **Singleton**, **Strategy** e **Chain Of Responsability**.
+Este repositório contém exemplos práticos de padrões de projeto em Java, com foco nos padrões **Adapter**, **Builder**, **Factory Method**, **Prototype**, **Proxy**, **Singleton**, **Strategy**, **Chain Of Responsability** e **Template Method**.
 
 O objetivo é fornecer uma base de estudo para entender conceitos de design de software, estrutura de código e boas práticas.
 
@@ -270,6 +270,42 @@ Um sistema de atendimento ao cliente onde um chamado pode passar por atendentes 
 
 ### Pacote no projeto
 `src/main/java/com/seuprojeto/padroes/comportamentais/chainofresponsibility`
+
+## Template Method
+
+O **padrão Template Method** é um padrão de design comportamental que define o **esqueleto de um algoritmo** em uma classe base, permitindo que subclasses sobrescrevam partes específicas sem alterar a estrutura geral do processo.
+
+### Características principais
+- Define uma sequência fixa de passos para um algoritmo.
+- Centraliza a lógica comum em uma classe base.
+- Permite que subclasses personalizem etapas específicas.
+- Promove reuso e consistência de código.
+
+### Exemplo do mundo real
+No processo de **reparo de veículos**, tanto carros **comuns** quanto **de luxo** seguem a mesma sequência: entrada na oficina, análise de danos e notificação à seguradora.  
+A diferença está no critério de decisão sobre reparo ou perda total, que cada tipo de veículo pode implementar de forma distinta.
+
+### Quando usar
+- Quando diferentes classes executam algoritmos semelhantes com pequenas variações.
+- Para evitar duplicação de código em processos que compartilham a mesma estrutura.
+- Quando se deseja padronizar um processo, mas ainda permitir flexibilidade em determinados passos.
+
+### Vantagens
+- Reduz duplicação de código.
+- Mantém a lógica de alto nível centralizada.
+- Facilita manutenção e consistência do algoritmo.
+
+### Desvantagens
+- Pode gerar dependência forte entre a classe base e as subclasses.
+- Uso excessivo pode tornar a hierarquia rígida e de difícil extensão.
+
+### Estrutura simplificada
+- **Classe Abstrata (Template)**: define a sequência fixa do algoritmo.
+- **Subclasses Concretas**: implementam as variações dos passos.
+- **Cliente**: utiliza o método template sem conhecer os detalhes internos.
+
+### Pacote no projeto
+`src/main/java/com/seuprojeto/padroes/comportamentais/templatemethod`
 
 
 ## Como compilar e executar
