@@ -34,7 +34,7 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return String.format("Funcionário: %-10s | Tipo: %-7s | Salário: R$ %,.2f",
+        return String.format("Funcionário: %-10s | Tipo: %-12s | Salário: R$ %,.2f",
                 nome,
                 tipoContratacao,
                 salario);

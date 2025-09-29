@@ -5,7 +5,7 @@
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen)](#)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
-Este repositório contém exemplos práticos de padrões de projeto em Java, com foco nos padrões **Singleton**, **Builder** e **Factory Method**.
+Este repositório contém exemplos práticos de padrões de projeto em Java, com foco nos padrões **Adapter**, **Builder**, **Factory Method**, **Prototype**, **Proxy**, **Singleton** e **Strategy**.
 
 O objetivo é fornecer uma base de estudo para entender conceitos de design de software, estrutura de código e boas práticas.
 
@@ -199,6 +199,42 @@ Um adaptador de tomada que permite conectar um plugue de três pinos em uma toma
 - **Client**: Utiliza a interface `Target` sem conhecer os detalhes de adaptação.
 
 ### Pacote no projeto
+
+## Strategy
+
+O **padrão Strategy** é um padrão de design comportamental que permite definir uma família de algoritmos, encapsulá-los em classes separadas e torná-los intercambiáveis em tempo de execução. Ele delega a responsabilidade de uma operação para diferentes estratégias, evitando condicionais extensas.
+
+### Características principais
+- Separa o algoritmo da lógica de negócio principal.
+- Facilita a adição de novos comportamentos sem modificar código existente.
+- Elimina o uso excessivo de `if/else` ou `switch`.
+
+### Exemplo do mundo real
+Um sistema de pagamento onde o cliente pode escolher pagar com cartão de crédito, PayPal ou Pix. Cada método de pagamento segue regras próprias, mas a interface para o cliente permanece a mesma.
+
+### Quando usar
+- Quando uma classe possui vários comportamentos possíveis que podem ser escolhidos em tempo de execução.
+- Para eliminar blocos de decisão complexos (`if/else`).
+- Quando você deseja respeitar o princípio **Aberto/Fechado** (Open/Closed Principle).
+
+### Vantagens
+- Aumenta a flexibilidade do sistema.
+- Torna o código mais legível e fácil de manter.
+- Facilita a inclusão de novos algoritmos sem alterar código existente.
+- Promove a **cohesão** (cada classe tem uma única responsabilidade).
+
+### Desvantagens
+- Pode aumentar o número de classes no sistema.
+- A escolha da estratégia correta deve ser gerenciada pelo cliente ou por um contexto.
+
+### Estrutura simplificada
+- **Strategy**: Interface comum para todas as estratégias.
+- **ConcreteStrategy**: Implementações específicas do algoritmo.
+- **Context**: Define qual estratégia será utilizada.
+- **Client**: Configura o contexto com a estratégia desejada.
+
+### Pacote no projeto
+`src/main/java/com/seuprojeto/padroes/comportamentais/strategy`
 
 
 ## Como compilar e executar
