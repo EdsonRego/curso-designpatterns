@@ -5,7 +5,7 @@
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen)](#)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
-Este repositório contém exemplos práticos de padrões de projeto em Java, com foco nos padrões **Adapter**, **Builder**, **Factory Method**, **Prototype**, **Proxy**, **Singleton** e **Strategy**.
+Este repositório contém exemplos práticos de padrões de projeto em Java, com foco nos padrões **Adapter**, **Builder**, **Factory Method**, **Prototype**, **Proxy**, **Singleton**, **Strategy** e **Chain Of Responsability**.
 
 O objetivo é fornecer uma base de estudo para entender conceitos de design de software, estrutura de código e boas práticas.
 
@@ -235,6 +235,41 @@ Um sistema de pagamento onde o cliente pode escolher pagar com cartão de crédi
 
 ### Pacote no projeto
 `src/main/java/com/seuprojeto/padroes/comportamentais/strategy`
+
+## Chain of Responsibility
+
+O **padrão Chain of Responsibility** é um padrão de design comportamental que permite que uma solicitação percorra uma cadeia de objetos receptores até que algum deles a processe. Ele desacopla o remetente de quem processa a requisição, promovendo flexibilidade na definição de quem trata o quê.
+
+### Características principais
+- Permite que múltiplos objetos tenham a oportunidade de tratar uma solicitação.
+- Desacopla o remetente da lógica de processamento.
+- Facilita a modificação ou extensão da cadeia sem alterar o cliente.
+
+### Exemplo do mundo real
+Um sistema de atendimento ao cliente onde um chamado pode passar por atendentes de níveis diferentes: suporte inicial, especialista e gerente, até que algum deles consiga resolver o problema.
+
+### Quando usar
+- Quando você quer evitar o acoplamento rígido entre remetente e receptor.
+- Para permitir que múltiplos objetos tratem solicitações de forma dinâmica.
+- Quando diferentes handlers podem processar a mesma requisição em momentos distintos.
+
+### Vantagens
+- Reduz o acoplamento entre remetente e receptor.
+- Facilita adicionar ou reorganizar handlers sem impactar o cliente.
+- Promove a **responsabilidade única** em cada handler.
+
+### Desvantagens
+- Pode ser difícil depurar se a cadeia for longa ou complexa.
+- Se nenhum handler processar a solicitação, pode gerar comportamentos inesperados.
+- Introduz complexidade adicional na configuração da cadeia.
+
+### Estrutura simplificada
+- **Handler**: Interface ou classe abstrata que declara um método para processar a solicitação e manter referência ao próximo handler.
+- **ConcreteHandler**: Implementações que processam a solicitação ou delegam ao próximo handler.
+- **Client**: Inicia a requisição passando-a para o primeiro handler da cadeia.
+
+### Pacote no projeto
+`src/main/java/com/seuprojeto/padroes/comportamentais/chainofresponsibility`
 
 
 ## Como compilar e executar
